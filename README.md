@@ -49,9 +49,13 @@ export MURF_DEFAULT_VOICE=en-US-terrell
 
 ## Usage
 
+For normal use you don't touch these directly. Set `tts: provider: murf` in your config and Hermes instantiates the provider and calls it for you. The examples below show the API surface for anyone building on top of it, e.g. `from hermes_murf_plugin import MurfTTSProvider`. (`play()` here is a stand-in for however you send audio to your output.)
+
 **One-shot streaming:**
 
 ```python
+from hermes_murf_plugin import MurfTTSProvider
+
 provider = MurfTTSProvider()
 for chunk in provider.stream("Hello there!", voice="en-US-terrell"):
     play(chunk)
@@ -81,7 +85,7 @@ One thread calls `send_text()`, one thread iterates `iter_audio()`. Same one-sen
 
 ## Verified in production
 
-This has been running behind a live Discord voice bot doing sentence-by-sentence streaming replies, live voice switching, and multi-speaker input, for an extended period. These are confirmed from real usage, not just read off the docs:
+This has been running behind a live Discord voice bot doing sentence-by-sentence streaming replies, live voice switching, and multi-speaker input. These are confirmed from real usage, not just read off the docs:
 
 | Claim | What we saw |
 |---|---|

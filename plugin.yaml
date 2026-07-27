@@ -1,6 +1,6 @@
 name: murf-tts
-version: 1.0.0
-description: "Murf Falcon streaming text-to-speech backend for Hermes — ultra-low-latency (under 100ms time-to-first-audio) TTS over Murf's WebSocket API, with a persistent multi-sentence live session and a batch synthesize() fallback. Requires MURF_API_KEY — sign up at https://murf.ai/api."
+version: 1.0.1
+description: "Murf Falcon streaming text-to-speech backend for Hermes. Ultra-low-latency (under 100ms time-to-first-audio) TTS over Murf's WebSocket API, with a persistent multi-sentence live session and a batch synthesize() fallback. Requires MURF_API_KEY (sign up at https://murf.ai/api)."
 author: sanchitasunil
 kind: backend
 requires_env:
